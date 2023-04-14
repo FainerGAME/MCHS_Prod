@@ -1,0 +1,144 @@
+﻿<Page x:Class="MCHS.User.Page.ResponsePage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:MCHS.User.Page"
+      mc:Ignorable="d"
+      Title="ResponsePage" Height="450" Width="800">
+    <Grid>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <DockPanel>
+                <TextBox 
+                    x:Name = "TB_Path"
+                    Width="730"
+                    Margin="0 7 0 0"
+                    materialDesign:HintAssist.Hint="Путь к файлу"
+                    BorderThickness="2"
+                    BorderBrush="{DynamicResource MaterialDesignDivider}"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                <StackPanel>
+                    <Button 
+                        ToolTip="Путь к файлу
+                        1. Открыть нужный диск 
+                        2. Создать файл docs 
+                        3. Выбрать файл docs
+                        "
+                        Width="50"
+                        HorizontalAlignment="Right"
+                        Margin="0 0 5 0"
+                        materialDesign:ButtonAssist.CornerRadius="15"
+                        x:Name="btn_Path"
+                        Click="Btn_Path_OnClick"
+                    >
+                        <materialDesign:PackIcon Kind="File" />
+                    </Button>
+                    <Button
+                        ToolTip="Сохранить файл на компьютере"
+                        Width="50"
+                        Margin="0 5 5 0"
+                        HorizontalAlignment="Right"
+                        materialDesign:ButtonAssist.CornerRadius="15"
+                        x:Name="btn_Save"
+                        Click="Btn_Save_OnClick"
+                    >
+                        <materialDesign:PackIcon Kind="ContentSave" />
+                    </Button>
+                </StackPanel>
+            </DockPanel>
+            <DockPanel HorizontalAlignment="Center" Margin="0 10 0 0">
+                <Button
+                    ToolTip="Сохранить файл на сервере"
+                    Width="50"
+                    HorizontalAlignment="Center"
+                    Margin="0 0 5 0"
+                    materialDesign:ButtonAssist.CornerRadius="15"
+                    x:Name="btn_Save_Server"
+                    Click="Btn_Save_Server_OnClick"
+                >
+                    <materialDesign:PackIcon Kind="ContentSave" />
+                </Button>
+                <Button
+                    ToolTip="Отобразить файл"
+                    Width="50"
+                    HorizontalAlignment="Center"
+                    Margin="0 0 5 0"
+                    materialDesign:ButtonAssist.CornerRadius="15"
+                    x:Name="btn_Ret"
+                    Click="Btn_Ret_OnClick"
+                >
+                    <materialDesign:PackIcon Kind="ClipboardArrowDown" />
+                </Button>
+                <Button
+                    ToolTip="Обновить запись"
+                    Width="50"
+                    HorizontalAlignment="Center"
+                    Margin="0 0 5 0"
+                    materialDesign:ButtonAssist.CornerRadius="15"
+                    x:Name="btn_Upd"
+                    Click="Btn_Upd_OnClick"
+                >
+                    <materialDesign:PackIcon Kind="Update" />
+                </Button>
+                <Button
+                    ToolTip="Удалить запись"
+                    Width="50"
+                    HorizontalAlignment="Center"
+                    Margin="0 0 5 0"
+                    materialDesign:ButtonAssist.CornerRadius="15"
+                    x:Name="btn_Del"
+                    Click="Btn_Del_OnClick"
+                >
+                    <materialDesign:PackIcon Kind="Trash" />
+                </Button>
+                <ComboBox
+                    x:Name="CB_File"
+                    Text=""
+                    FontSize="16"
+                    Height="50"
+                    Width="100"
+                    HorizontalAlignment="Left"
+                    materialDesign:HintAssist.Hint="Файл"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                    SelectionChanged="CB_File_OnSelectionChanged"
+                />
+            </DockPanel>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel  Margin="0 10 0 0">
+                <TextBox 
+                    x:Name = "TB_Name"
+                    materialDesign:HintAssist.Hint="Название файла на сервере"
+                    BorderThickness="2"
+                    BorderBrush="{DynamicResource MaterialDesignDivider}"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                <TextBox 
+                    x:Name = "TB_Header"
+                    materialDesign:HintAssist.Hint="Заголовок документа"
+                    BorderThickness="2"
+                    BorderBrush="{DynamicResource MaterialDesignDivider}"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                <TextBox 
+                    x:Name = "TB_Footer"
+                    Margin="0 10 0 10 "
+                    materialDesign:HintAssist.Hint="Футер документа"
+                    BorderThickness="2"
+                    BorderBrush="{DynamicResource MaterialDesignDivider}"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                <TextBox Height="270" 
+                         Name="TB_Write" 
+                         VerticalScrollBarVisibility="Auto"
+                         TextWrapping="Wrap"
+                         VerticalAlignment="Stretch"
+                         AcceptsReturn="True">
+                
+                </TextBox>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

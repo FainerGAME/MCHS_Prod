@@ -1,0 +1,135 @@
+﻿<Window x:Class="MCHS.User.Page.FrameWin"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Title="FrameWin" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" HorizontalAlignment="Right">
+            <Button Background="Transparent" BorderThickness="0" x:Name="Profile_Btn" Click="Profile_Btn_OnClick">
+                <WrapPanel>
+                    <Image
+                        Source="F:\C#\MCHS\MCHS\img\logo.png"
+                        Width="25"
+                        Height="25"
+                    />
+                    <Label Content="Максим" Margin="0 0 0 0" FontSize="12" FontWeight="SemiBold" x:Name="FN_Label"/>
+                    <Label Content="Владимирович" Margin="0 0 0 0" FontSize="12" FontWeight="SemiBold" x:Name="LN_Label"/>
+                </WrapPanel>
+            </Button>
+        </WrapPanel>
+        <Frame
+            Grid.Row="1"
+            x:Name="MyFrame"
+            NavigationUIVisibility="Hidden"
+            Source="UserMainPage.xaml"
+        >
+            
+        </Frame>
+        <materialDesign:Card Grid.Row="2" Margin="3 0 5 3" Background="Orange" HorizontalAlignment="Center" UniformCornerRadius="15">
+             <WrapPanel>
+            <StackPanel Margin="10 0 10 0 ">
+                <Button
+                    x:Name="Home"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Foreground="White"
+                    Click="Home_OnClick"
+                >
+                    <materialDesign:PackIcon Kind="Home"
+                                             Width="24"
+                                             Height="24"
+                                             HorizontalAlignment="Center"/>
+                </Button>
+                <TextBlock
+                    FontWeight="Bold"
+                    Foreground="White"
+                    HorizontalAlignment="Center"
+                    Text="Главная страница"/>
+            </StackPanel>
+            <StackPanel Margin="10 0 10 0 " >
+                <Button
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Foreground="White"
+                >
+                    <materialDesign:PackIcon Kind="CarEmergency"
+                                             Width="24"
+                                             Height="24"
+                                             HorizontalAlignment="Center"/>
+                </Button>
+                <TextBlock
+                    FontWeight="Bold"
+                    Foreground="White"
+                    HorizontalAlignment="Center"
+                    Text="Происшествия"/>
+            </StackPanel>
+            <StackPanel Margin="10 0 10 0 ">
+                <Button
+                    x:Name="Respons_Btn"
+                    Click="Respons_Btn_OnClick"
+                    Background="Transparent"
+                    BorderThickness="0"
+                >
+                    <materialDesign:PackIcon Kind="FileWord"
+                                             Width="24"
+                                             Foreground="White"
+                                             Height="24"
+                                             HorizontalAlignment="Center"/>
+                </Button>
+                <TextBlock
+                    FontWeight="Bold"
+                    Foreground="White"
+                    HorizontalAlignment="Center"
+                    Text="Отчет"/>
+            </StackPanel>
+            <StackPanel Margin="10 0 10 0 ">
+                <Button
+                    Background="Transparent"
+                    BorderThickness="0"
+                >
+                    <materialDesign:PackIcon Kind="NoteMultiple"
+                                             Width="24"
+                                             Foreground="White"
+                                             Height="24"
+                                             HorizontalAlignment="Center"/>
+                </Button>
+                <TextBlock
+                    FontWeight="Bold"
+                    Foreground="White"
+                    HorizontalAlignment="Center"
+                    Text="Просмотр всех отчетов"/>
+            </StackPanel>
+            <StackPanel Margin="10 0 10 0 ">
+                <Button
+                    x:Name="Close_btn"
+                    Click="Close_btn_OnClick"
+                    Background="Transparent"
+                    BorderThickness="0"
+                >
+                    <materialDesign:PackIcon Kind="ExitToApp"
+                                             Width="24"
+                                             Foreground="White"
+                                             Height="24"
+                                             HorizontalAlignment="Center"/>
+                </Button>
+                <TextBlock
+                    FontWeight="Bold"
+                    Foreground="White"
+                    HorizontalAlignment="Center"
+                    Text="Выход"/>
+            </StackPanel>
+        </WrapPanel>
+        </materialDesign:Card>
+    </Grid>
+</Window>
